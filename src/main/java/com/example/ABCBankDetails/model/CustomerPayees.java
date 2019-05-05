@@ -22,13 +22,13 @@ public class CustomerPayees{
 	public void setCustomerPayeeId(int customerPayeeId) {
 		this.customerPayeeId = customerPayeeId;
 	}
-	public Long getCustomerId() {
+	public int getCustomerId() {
 		return customerId;
 	}
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
-	public Long getPayeeId() {
+	public int getPayeeId() {
 		return payeeId;
 	}
 	public void setPayeeId(int payeeId) {
