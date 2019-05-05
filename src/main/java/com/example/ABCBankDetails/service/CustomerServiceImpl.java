@@ -38,7 +38,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
 @Override
-public boolean validatingAccounts(Long payeeId) {
+public boolean validatingAccounts(int payeeId) {
 	
 		boolean validCustomer = false;
 		

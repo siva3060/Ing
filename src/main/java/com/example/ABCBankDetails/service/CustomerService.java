@@ -10,5 +10,5 @@ public interface CustomerService {
 
 	boolean addPayeeToAccount(PayeeAddRequestDTO payeeAddRequestDto);
 
-	boolean validatingAccounts(Long payeeId);
+	boolean validatingAccounts(int payeeId);
 }

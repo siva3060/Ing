@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.example.ABCBankDetails.model.CustomerPayees;
 
 @Repository
-public interface PayeeRepository extends JpaRepository<CustomerPayees,Long> {
+public interface PayeeRepository extends JpaRepository<CustomerPayees,int> {
 
 }

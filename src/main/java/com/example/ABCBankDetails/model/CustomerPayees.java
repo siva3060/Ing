@@ -11,27 +11,27 @@ public class CustomerPayees{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long customerPayeeId;
-	private Long customerId;
-	private Long payeeId;
+	private int customerPayeeId;
+	private int customerId;
+	private int payeeId;
 	
 	
-	public Long getCustomerPayeeId() {
+	public int getCustomerPayeeId() {
 		return customerPayeeId;
 	}
-	public void setCustomerPayeeId(Long customerPayeeId) {
+	public void setCustomerPayeeId(int customerPayeeId) {
 		this.customerPayeeId = customerPayeeId;
 	}
 	public Long getCustomerId() {
 		return customerId;
 	}
-	public void setCustomerId(Long customerId) {
+	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
 	public Long getPayeeId() {
 		return payeeId;
 	}
-	public void setPayeeId(Long payeeId) {
+	public void setPayeeId(int payeeId) {
 		this.payeeId = payeeId;
 	}
 	

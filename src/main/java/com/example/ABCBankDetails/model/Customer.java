@@ -10,7 +10,7 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long customerId;
+	private int customerId;
 	private Long customerAccountNumber;
 	private String customerName;
 	private String customerEmail;
