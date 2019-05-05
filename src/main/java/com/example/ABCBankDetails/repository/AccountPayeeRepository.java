@@ -11,6 +11,6 @@ import com.example.ABCBankDetails.model.AccountPayee;
 public interface AccountPayeeRepository extends JpaRepository<AccountPayee, Long>{
 	
 	
-	void deleteByAccountNoSourceAndAccountNoTarget(int accountNoSource,int accountNoTarget);
+	AccountPayee getByAccountNoSourceAndAccountNoTarget(int accountNoSource,int accountNoTarget);
 
 }
