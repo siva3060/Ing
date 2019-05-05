@@ -8,8 +8,8 @@ import javax.persistence.Id;
 @Entity
 public class AccountPayee {
 	
-	 @Id
-	 @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	public Long getId() {
