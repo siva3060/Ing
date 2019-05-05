@@ -8,8 +8,9 @@ import com.example.ABCBankDetails.model.AccountPayee;
 @Repository
 public interface AccountPayeeRepository extends JpaRepository<AccountPayeeRepository, Long>{
 
-	List<AccountPayee> findByAccountNumber(int accountNumber);
-void deleteByAccountNoSourceAndAccountNoTarget(int accountNoSource,int accountNoTarget);
+	List<AccountPayee> findByAccountNumber(Long accountNumber);
+	void deleteByAccountNoSourceAndAccountNoTarget(int accountNoSource,int accountNoTarget);
 	
+	AccountPayee getByAccountNoSourceAndAccountNoTarget(int accountNoSource,int accountNoTarget);
 
 }

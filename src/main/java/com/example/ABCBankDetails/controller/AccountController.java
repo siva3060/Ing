@@ -15,10 +15,7 @@ import com.example.ABCBankDetails.model.CustomerPayees;
 import com.example.ABCBankDetails.service.AccountDeleteService;
 import com.example.ABCBankDetails.service.AccountPayeeService;
 
-@RestController
 @RequestMapping("\bankapp")
-
-
 public class AccountController {
 	@Autowired
 	AccountPayeeService accountPayeeService;
@@ -27,12 +24,12 @@ public class AccountController {
 	@Autowired
 	AccountDeleteService accountDeleteService;
 	
-	@GetMapping("/deletePayee")
-	public ResponseEntity<String> getDeletedPayee(@PathVariable int accountNoSource,int accountNoTarget ){
+	@GetMapping("/deletePayee/{accountNoSource}/{accountNoTarget}/{email}")
+	public ResponseEntity<String> getDeletedPayee(@PathVariable int accountNoSource,int accountNoTarget ,String email){
 		
 		
-		accountDeleteService.getDeletePayee(accountNoSource,accountNoTarget);		
-		return new ResponseEntity<String>("Successfully get the deleted records", HttpStatus.ACCEPTED);
+		String message = accountDeleteService.getDeletePayee(accountNoSource,accountNoTarget,email);		
+		return new ResponseEntity<String>(message , HttpStatus.ACCEPTED);
 	}
 
 	@GetMapping("/viewPayee")
