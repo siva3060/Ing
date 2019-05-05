@@ -28,43 +28,15 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-	<classpathentry kind="lib" path="C:/Users/User1/.m2/repository/io/springfox/springfox-swagger2/2.9.2/springfox-swagger2-2.9.2.jar" sourcepath="C:/Users/User1/.m2/repository/io/springfox/springfox-swagger2/2.9.2/springfox-swagger2-2.9.2-sources.jar">
+	<classpathentry kind="lib" path="/home/siva/.m2/repository/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar" sourcepath="/home/siva/.m2/repository/org/projectlombok/lombok/1.18.6/lombok-1.18.6-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="io.springfox"/>
-			<attribute name="maven.artifactId" value="springfox-swagger2"/>
-			<attribute name="maven.version" value="2.9.2"/>
+			<attribute name="maven.groupId" value="org.projectlombok"/>
+			<attribute name="maven.artifactId" value="lombok"/>
+			<attribute name="maven.version" value="1.18.6"/>
 			<attribute name="maven.scope" value="compile"/>
+			<attribute name="maven.optionaldependency" value="true"/>
 		</attributes>
 	</classpathentry>
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-	<classpathentry kind="src" path="target/generated-sources/annotations">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="ignore_optional_problems" value="true"/>
-			<attribute name="m2e-apt" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="ignore_optional_problems" value="true"/>
-			<attribute name="m2e-apt" value="true"/>
-			<attribute name="test" value="true"/>
-		</attributes>
-	</classpathentry>
-=======
->>>>>>> 121fa6f7cf2793545c7a8e62194bcf619832519d
->>>>>>> 2965a02ae7001e2a281c298d2d0f32e4b5140a0a
->>>>>>> a9e026a4dc4278574d802bd8a5dbc8160c401cdb
->>>>>>> d3e29e12a27ddbdfc98d9c8dd3ee6373040e065f
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -4,8 +4,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.ABCBankDetails.dto.PayeeAddRequestDTO;
+import com.example.ABCBankDetails.dto.CreateCustRequest;
 import com.example.ABCBankDetails.service.CustomerService;
+import com.example.ABCBankDetails.validate.ValidationService;
 
 
 @RestController
@@ -26,14 +27,14 @@ public class CustomerController {
 	//	If not 
 	//		-create new customer
 	@PostMapping("/createCustomer")
-	public String createNewCustomer(CustomerCreateRequest custCreateRequest){
+	public String createNewCustomer(CreateCustRequest custCreateRequest){
 		boolean customerExist = true;
 		String createCustResponse = "Customer Exist already exist";
-		customerExist = validationService.customerExist(custCreateRequest.getCusAcctNum());
+		customerExist = validationService.customerExist(custCreateRequest.getCustomerAccNum());
 
-		if(customerExist.boolean.isFalse()){
+		if(customerExist == false){
 			customerService.createCustomer(custCreateRequest);
-			createCustResponse = "New Customer Created with A/c No"+custCreateRequest.getCustAcctNum();
+			createCustResponse = "New Customer Created with A/c No"+custCreateRequest.getCustomerAccNum();
 		}
 		return createCustResponse;
 		//End of method createCustomer	

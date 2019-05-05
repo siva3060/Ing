@@ -27,7 +27,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.6</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -56,14 +61,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
-			</dependency>
+		</dependency>
 	</dependencies>
 	<distributionManagement>
-  <snapshotRepository>
-    <id>nexus</id>
-    <url>http://13.233.198.149:8081/nexus/content/repositories/nexus/</url>
-  </snapshotRepository>
-</distributionManagement>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://13.233.198.149:8081/nexus/content/repositories/nexus/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
@@ -72,27 +77,27 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-		<groupId>org.jacoco</groupId>
-		<artifactId>jacoco-maven-plugin</artifactId>
-		<version>0.8.0</version>
-		<executions>
-			<execution>
-				
-				<id>default-prepare-agent</id>
-				<goals>
-					<goal>prepare-agent</goal>
-				</goals>
-			</execution>
-			<!-- attached to Maven test phase -->
-			<execution>
-				<id>default-report</id>
-				<phase>prepare-package</phase>
-				<goals>
-					<goal>report</goal>
-				</goals>
-			</execution>
-		</executions>
-	</plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.0</version>
+				<executions>
+					<execution>
+
+						<id>default-prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<!-- attached to Maven test phase -->
+					<execution>
+						<id>default-report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

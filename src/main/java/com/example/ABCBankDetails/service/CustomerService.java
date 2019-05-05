@@ -2,13 +2,11 @@ package com.example.ABCBankDetails.service;
 
 import org.springframework.stereotype.Service;
 
-import com.example.ABCBankDetails.dto.PayeeAddRequestDTO;
+import com.example.ABCBankDetails.dto.CreateCustRequest;
 
 
 @Service
 public interface CustomerService {
 
-	boolean addPayeeToAccount(PayeeAddRequestDTO payeeAddRequestDto);
-
-	boolean validatingAccounts(int payeeId);
+	boolean createCustomer(CreateCustRequest custCreateRequest);
 }
