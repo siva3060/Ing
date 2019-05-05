@@ -7,6 +7,5 @@ import com.example.ABCBankDetails.model.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer,Integer> {
 
-	Customer findByCustomerId(int payeeId);
 
 }

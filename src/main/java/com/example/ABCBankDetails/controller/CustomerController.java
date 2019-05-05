@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.ABCBankDetails.dto.PayeeAddRequestDTO;
 import com.example.ABCBankDetails.service.CustomerService;
+
+
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
@@ -13,30 +15,30 @@ public class CustomerController {
 
 	@Autowired
 	CustomerService customerService;
-	//Method : Adding a payee
-	// This method will add an payee to the PayeeTable
-	// Only after confirmation of accounts exists or not
-	@PostMapping("/Addpayee")
-	public String addPayee(PayeeAddRequestDTO payeeAddRequestDto){
 
-		boolean payeeExist = false;
-		String addPayeeMsg = null;
+	@Autowired
+	ValidationService validationService;
 
-		
-		//we will validate weather the accounts exists or not 
-		payeeExist = customerService.validatingAccounts(payeeAddRequestDto.getPayeeId());
-		//If exist return method with string or some error
-		if(payeeExist){
-			if(customerService.addPayeeToAccount(payeeAddRequestDto)) {
-				addPayeeMsg =  "A payee has been added to your account";
-			}
-			else {
-				addPayeeMsg=  "Unable to add requested payee";
-			}
+	//Method : create a new customer 
+	//	Check weather the customer based on the id/account number
+	//	If exist
+	//		-display customer exist
+	//	If not 
+	//		-create new customer
+	@PostMapping("/createCustomer")
+	public String createNewCustomer(CustomerCreateRequest custCreateRequest){
+		boolean customerExist = true;
+		String createCustResponse = "Customer Exist already exist";
+		customerExist = validationService.customerExist(custCreateRequest.getCusAcctNum());
+
+		if(customerExist.boolean.isFalse()){
+			customerService.createCustomer(custCreateRequest);
+			createCustResponse = "New Customer Created with A/c No"+custCreateRequest.getCustAcctNum();
 		}
-		return addPayeeMsg;
-	//End of method addPayee	
+		return createCustResponse;
+		//End of method createCustomer	
 	}
+
 	//end of CustomerController Class
 }
 
