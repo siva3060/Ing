@@ -5,10 +5,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.example.ABCBankDetails.repository.PayeeRepository;
 import com.example.ABCBankDetails.dto.PayeeAddResDto;
 import com.example.ABCBankDetails.model.*;
-import com.example.ABCBankDetails.repository.AccountPayee;
+
 
 @Service
 public class AccountPayeeServiceImpl implements AccountPayeeService {
