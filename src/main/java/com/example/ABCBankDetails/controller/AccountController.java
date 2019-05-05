@@ -4,25 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.ABCBankDetails.dto.PayeeAddReqDto;
-import com.example.ABCBankDetails.dto.PayeeAddResDto;
-import com.example.ABCBankDetails.repository.AccountPayee;
-import com.example.ABCBankDetails.service.AccountPayeeService;
-import com.example.ABCBankDetials.model.AccountPayee;
 
-
-
+import com.example.ABCBankDetails.model.CustomerPayees;
 import com.example.ABCBankDetails.service.AccountDeleteService;
+import com.example.ABCBankDetails.service.AccountPayeeService;
 
 @RestController
 @RequestMapping("\bankapp")
@@ -45,8 +36,8 @@ public class AccountController {
 	}
 
 	@GetMapping("/viewPayee")
-	 public List<AccountPayee> getAddViewPayee(@PathVariable Long accountNumber){
-		List<AccountPayee> resResult= new ArrayList();
+	 public List<CustomerPayees> getAddViewPayee(@PathVariable Long accountNumber){
+		List<CustomerPayees> resResult= new ArrayList();
 	       resResult = accountPayeeService.getAddViewPayee(accountNumber);  
 	    return 	resResult;
 	
