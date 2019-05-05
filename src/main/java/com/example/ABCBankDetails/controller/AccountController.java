@@ -18,6 +18,7 @@ import com.example.ABCBankDetails.dto.PayeeAddReqDto;
 import com.example.ABCBankDetails.dto.PayeeAddResDto;
 import com.example.ABCBankDetails.repository.AccountPayee;
 import com.example.ABCBankDetails.service.AccountPayeeService;
+import com.example.ABCBankDetials.model.AccountPayee;
 
 
 
