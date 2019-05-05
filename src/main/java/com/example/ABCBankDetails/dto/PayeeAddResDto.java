@@ -2,21 +2,21 @@ package com.example.ABCBankDetails.dto;
 
 public class PayeeAddResDto {
 
-	private int accountNoSource;
-	private int accountNoTarget;
+	private Long accountNoSource;
+	private Long accountNoTarget;
 	private String nickNameTarget;
 	private String emailSource;
 	private String message;
-	public int getAccountNoSource() {
+	public Long getAccountNoSource() {
 		return accountNoSource;
 	}
-	public void setAccountNoSource(int accountNoSource) {
+	public void setAccountNoSource(Long accountNoSource) {
 		this.accountNoSource = accountNoSource;
 	}
-	public int getAccountNoTarget() {
+	public Long getAccountNoTarget() {
 		return accountNoTarget;
 	}
-	public void setAccountNoTarget(int accountNoTarget) {
+	public void setAccountNoTarget(Long accountNoTarget) {
 		this.accountNoTarget = accountNoTarget;
 	}
 	public String getNickNameTarget() {
