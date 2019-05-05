@@ -15,6 +15,5 @@ import com.example.ABCBankDetails.model.CustomerPayees;
 
 @Repository
 public interface PayeeRepository extends JpaRepository<CustomerPayees,int> {
-
 	List<AccountPayee> findByAccountNumber(Long accountNumber);
 }
