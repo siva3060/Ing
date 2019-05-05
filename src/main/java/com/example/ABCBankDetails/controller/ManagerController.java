@@ -5,17 +5,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.ABCBankDetails.dto.CreateCustRequest;
-import com.example.ABCBankDetails.service.CustomerService;
+import com.example.ABCBankDetails.service.ManagerService;
 import com.example.ABCBankDetails.validate.ValidationService;
 
 
 @RestController
 @RequestMapping("/customer")
-public class CustomerController {
+public class ManagerController{
 
 
 	@Autowired
-	CustomerService customerService;
+	ManagerService managerService;
 
 	@Autowired
 	ValidationService validationService;
@@ -33,13 +33,45 @@ public class CustomerController {
 		customerExist = validationService.customerExist(custCreateRequest.getCustomerAccNum());
 
 		if(customerExist == false){
-			customerService.createCustomer(custCreateRequest);
+			managerService.createCustomer(custCreateRequest);
 			createCustResponse = "New Customer Created with A/c No"+custCreateRequest.getCustomerAccNum();
 		}
 		return createCustResponse;
 		//End of method createCustomer	
 	}
 
+
+	//Method : seach by accountNumber
+	// 	manger function to search an given  account number
+	
+	public String searchByAccountNumber(Long accoutNumber){
+
+		boolean accountValidate = false;
+		String searchResponse = "No user found with the customer account number";
+		accountValidate = validationService.validateCustomerAccountNumber(accoutNumber);
+		if(accountValidate){
+			searchResponse = managerService.searchCustomerAccountNumber(accoutNumber);	
+		}
+		return searchResponse;
+
+		//end of the method search by account name
+	}
+	
+	//Method : search by accountName
+	//	
+	// 	manger function to search an given  account name
+
+	public  String searchByAccountName(String accountName){
+		boolean nameValidate = false;
+		String searchResponse = "No user found with the customer name";
+		nameValidate = validationService.validateCustomerName(accountName);
+		if(nameValidate){
+			searchResponse = ManagerService.searchCustomerAccountName(accountName);	
+		}
+		return searchResponse;
+
+		//end of the method search by account name
+	}
 	//end of CustomerController Class
 }
 

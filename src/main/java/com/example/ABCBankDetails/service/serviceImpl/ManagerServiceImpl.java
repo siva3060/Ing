@@ -10,7 +10,7 @@ import com.example.ABCBankDetails.service.CustomerService;
 
 
 @Service
-public class CustomerServiceImpl implements CustomerService {
+public class ManagerServiceImpl implements ManagerService {
 	
  @Autowired
  CustomerRepository customerRepository;
@@ -29,6 +29,20 @@ public class CustomerServiceImpl implements CustomerService {
 	 return true;
  }
 
+	public String searchCustomerAccountNumber(Long accountNumber){
+		Customer resultCustomer = customerRepository.findByCustomerAccountNumber(accountNumber);
+		if(resultCustomer != null){
+			return resultCustomer.toString();
+		}
 
+	}
+
+	public String searchCustomerName(String accountName){
+
+		Customer resultCustomer = customerRepository.findByCustomerName(accountName);
+		if(resultCustomer != null){
+			return resultCustomer.toString();
+		}
+	}
 
 }

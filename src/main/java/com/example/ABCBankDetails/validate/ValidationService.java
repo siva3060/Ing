@@ -14,15 +14,24 @@ public class ValidationService{
 	CustomerRepository customerRepository;
 
 
-	public boolean customerExist(Long accountNum){
-		
+	public boolean validateCustomerAccountNumber(Long accountNumber){		
 		boolean customerExist = false;
 		Customer validCustomer = new Customer();
-		validCustomer = customerRepository.findByCustomerAccountNumber(accountNum);
+		validCustomer = customerRepository.findByCustomerAccountNumber(accountNumber);
 		if(validCustomer != null){
 			customerExist = true;
 		}
 
 		return customerExist;
+	}
+	
+	public boolean validateCustomerName(String accountName){
+		 boolean accountExist = false;
+		 Customer validCustomer = customerRepository.findByCustomerName(accountName);
+		 if(validCustomer != null) {
+			 accountExist = true;
+		 }
+		 return accountExist;
+		
 	}
 }
