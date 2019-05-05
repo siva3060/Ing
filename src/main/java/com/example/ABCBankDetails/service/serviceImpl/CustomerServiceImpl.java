@@ -22,7 +22,7 @@ public class CustomerServiceImpl implements CustomerService {
 	 newCustomer.setCustomerAccountNumber(createCustRequest.getCustomerAccNum());
 	 newCustomer.setCurrentBalance(0.00);
 	 newCustomer.setCustomerAddress(createCustRequest.getCustAddress());
-	 newCustomer.setCustomerEmail(createCustRequest.getCustAddress());
+	 newCustomer.setCustomerEmail(createCustRequest.getCustEmail());
 	 newCustomer.setCustomerName(createCustRequest.getCustName());
 	 newCustomer.setCustomerPassword(createCustRequest.getCustPassword());
 	 customerRepository.save(newCustomer);

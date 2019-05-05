@@ -16,6 +16,5 @@ public class CreateCustRequest implements Serializable{
 	private String custEmail;
 	private String custName;
 	private String custPassword;
-	private double intialBalance;
 	private String custAddress;
 }
