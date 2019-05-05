@@ -4,6 +4,6 @@ package com.example.ABCBankDetails.service;
 
 public interface AccountDeleteService {
 	
-	public void getDeletePayee(int accountNoSource,int accountNoTarget);
+	public String getDeletePayee(int accountNoSource,int accountNoTarget,String email);
 
 }

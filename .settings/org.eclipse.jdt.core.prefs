@@ -3,5 +3,15 @@ org.eclipse.jdt.core.compiler.codegen.methodParameters=generate
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
 org.eclipse.jdt.core.compiler.compliance=1.8
 org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+org.eclipse.jdt.core.compiler.processAnnotations=disabled
+=======
+>>>>>>> 121fa6f7cf2793545c7a8e62194bcf619832519d
+>>>>>>> 2965a02ae7001e2a281c298d2d0f32e4b5140a0a
+>>>>>>> a9e026a4dc4278574d802bd8a5dbc8160c401cdb
 org.eclipse.jdt.core.compiler.release=disabled
 org.eclipse.jdt.core.compiler.source=1.8
