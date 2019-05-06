@@ -18,6 +18,7 @@ public class ValidationService{
 		boolean customerExist = false;
 		Customer validCustomer = new Customer();
 		validCustomer = customerRepository.findByCustomerAccountNumber(accountNumber);
+		System.out.println(validCustomer.toString());
 		if(validCustomer != null){
 			customerExist = true;
 		}

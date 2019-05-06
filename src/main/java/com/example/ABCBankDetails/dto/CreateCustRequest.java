@@ -2,8 +2,6 @@ package com.example.ABCBankDetails.dto;
 
 import java.io.Serializable;
 
-import lombok.Data;
-
 
 
 public class CreateCustRequest implements Serializable{

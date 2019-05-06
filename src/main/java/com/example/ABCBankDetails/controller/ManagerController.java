@@ -1,5 +1,6 @@
 package com.example.ABCBankDetails.controller;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,7 @@ import com.example.ABCBankDetails.validate.ValidationService;
 
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/ManagerApi")
 public class ManagerController{
 
 
@@ -43,7 +44,7 @@ public class ManagerController{
 
 	//Method : seach by accountNumber
 	// 	manger function to search an given  account number
-	
+	@GetMapping("/searchCustomer")
 	public String searchByAccountNumber(Long accoutNumber){
 		boolean accountValidate = false;
 		String searchResponse = null;
@@ -60,13 +61,14 @@ public class ManagerController{
 	//	
 	// 	manger function to search an given  account name
 
+	@GetMapping("/searchCustomer")
 	public  String searchByAccountName(String accountName){
 		boolean nameValidate = false;
 		String searchResponse = null;
 		nameValidate = validationService.validateCustomerName(accountName);
 		if(nameValidate){
 			//might be build issue 
-			searchResponse = ManagerService.searchCustomerByName(accountName);	
+			searchResponse = managerService.searchCustomerByName(accountName);	
 		}
 		return searchResponse;
 
