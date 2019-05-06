@@ -1,4 +1,4 @@
-package com.hcl.vewpayee.entity;
+package com.example.ABCBankDetails.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

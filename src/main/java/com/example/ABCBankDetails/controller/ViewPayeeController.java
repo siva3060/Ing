@@ -1,4 +1,4 @@
-package com.hcl.vewpayee.controller;
+package com.example.ABCBankDetails.controller;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hcl.vewpayee.entity.ViewPayee;
-import com.hcl.vewpayee.service.ViewPayeeService;
+import com.example.ABCBankDetails.model.ViewPayee;
+import com.example.ABCBankDetails.service.ViewPayeeService;
 
 @RestController
 @RequestMapping("/bank")
