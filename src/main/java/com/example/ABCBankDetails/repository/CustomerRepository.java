@@ -8,7 +8,6 @@ import com.example.ABCBankDetails.model.Customer;
 public interface CustomerRepository extends JpaRepository<Customer,Integer> {
 
 	Customer findByCustomerAccountNumber(Long accountNum);
-
 	Customer findByCustomerName(String accountName);
 
 

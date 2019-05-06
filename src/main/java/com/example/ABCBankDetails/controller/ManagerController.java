@@ -44,7 +44,7 @@ public class ManagerController{
 
 	//Method : seach by accountNumber
 	// 	manger function to search an given  account number
-	@GetMapping("/searchCustomer")
+	@GetMapping("/searchAccount")
 	public String searchByAccountNumber(Long accoutNumber){
 		boolean accountValidate = false;
 		String searchResponse = null;
@@ -61,7 +61,7 @@ public class ManagerController{
 	//	
 	// 	manger function to search an given  account name
 
-	@GetMapping("/searchCustomer")
+	@GetMapping("/searchName")
 	public  String searchByAccountName(String accountName){
 		boolean nameValidate = false;
 		String searchResponse = null;
