@@ -9,7 +9,7 @@ import com.example.ABCBankDetails.dto.CreateCustRequest;
 public interface ManagerService {
 
 	boolean createCustomer(CreateCustRequest custCreateRequest);
-	String  searchCustomerAccountNumber(Long accountNumber);
-	String  searchCustomerName(String accountName);
-	
+	public String searchCustomerByName(String accountName);
+	public String searchCustomerByAccountNumber(Long accountNumber);
+
 }

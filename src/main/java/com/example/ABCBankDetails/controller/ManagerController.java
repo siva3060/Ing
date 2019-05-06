@@ -30,7 +30,7 @@ public class ManagerController{
 	public String createNewCustomer(CreateCustRequest custCreateRequest){
 		boolean customerExist = true;
 		String createCustResponse = "Customer Exist already exist";
-		customerExist = validationService.customerExist(custCreateRequest.getCustomerAccNum());
+		customerExist = validationService.validateCustomerAccountNumber(custCreateRequest.getCustomerAccNum());
 
 		if(customerExist == false){
 			managerService.createCustomer(custCreateRequest);
@@ -45,12 +45,11 @@ public class ManagerController{
 	// 	manger function to search an given  account number
 	
 	public String searchByAccountNumber(Long accoutNumber){
-
 		boolean accountValidate = false;
-		String searchResponse = "No user found with the customer account number";
+		String searchResponse = null;
 		accountValidate = validationService.validateCustomerAccountNumber(accoutNumber);
 		if(accountValidate){
-			searchResponse = managerService.searchCustomerAccountNumber(accoutNumber);	
+			searchResponse = managerService.searchCustomerByAccountNumber(accoutNumber);	
 		}
 		return searchResponse;
 
@@ -63,10 +62,11 @@ public class ManagerController{
 
 	public  String searchByAccountName(String accountName){
 		boolean nameValidate = false;
-		String searchResponse = "No user found with the customer name";
+		String searchResponse = null;
 		nameValidate = validationService.validateCustomerName(accountName);
 		if(nameValidate){
-			searchResponse = ManagerService.searchCustomerAccountName(accountName);	
+			//might be build issue 
+			searchResponse = ManagerService.searchCustomerByName(accountName);	
 		}
 		return searchResponse;
 

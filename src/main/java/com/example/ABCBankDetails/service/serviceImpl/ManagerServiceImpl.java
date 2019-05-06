@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.example.ABCBankDetails.dto.CreateCustRequest;
 import com.example.ABCBankDetails.model.Customer;
 import com.example.ABCBankDetails.repository.CustomerRepository;
-import com.example.ABCBankDetails.service.CustomerService;
+import com.example.ABCBankDetails.service.ManagerService;
 
 
 @Service
@@ -29,20 +29,23 @@ public class ManagerServiceImpl implements ManagerService {
 	 return true;
  }
 
-	public String searchCustomerAccountNumber(Long accountNumber){
+	public String searchCustomerByAccountNumber(Long accountNumber){
+		String searchResponse = "Customer do not exist with this Number";
 		Customer resultCustomer = customerRepository.findByCustomerAccountNumber(accountNumber);
 		if(resultCustomer != null){
-			return resultCustomer.toString();
+			searchResponse = resultCustomer.toString();
 		}
-
+			return searchResponse;
 	}
 
-	public String searchCustomerName(String accountName){
-
+	public String searchCustomerByName(String accountName){
+		String searchResponse = "Customer do not exist with this Number";
 		Customer resultCustomer = customerRepository.findByCustomerName(accountName);
 		if(resultCustomer != null){
-			return resultCustomer.toString();
+			searchResponse = resultCustomer.toString();
 		}
+		return searchResponse;
 	}
+
 
 }
