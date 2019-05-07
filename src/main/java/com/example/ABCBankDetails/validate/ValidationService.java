@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.ABCBankDetails.model.Customer;
+import com.example.ABCBankDetails.repository.CustomerOtpRepository;
 import com.example.ABCBankDetails.repository.CustomerRepository;
 
 @Service
@@ -12,6 +13,9 @@ public class ValidationService{
 
 	@Autowired
 	CustomerRepository customerRepository;
+	
+	@Autowired
+	CustomerOtpRepository customerOtpRepository;
 
 
 	public boolean validateCustomerAccountNumber(Long accountNumber){		
@@ -34,5 +38,18 @@ public class ValidationService{
 		 }
 		 return accountExist;
 		
+	}
+
+	public boolean validateOtp(int otp, Long customerId) {
+		// TODO Auto-generated method stub
+		boolean otpvalidation = false;
+		
+		
+		//works only one time for custmer 
+		if(otp == customerOtpRepository.getOtpByCustomerId(customerId)) {
+			otpvalidation = true;
+		}
+		
+		return otpvalidation;
 	}
 }

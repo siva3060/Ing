@@ -19,12 +19,11 @@ public class CustomerController {
 	@Autowired
 	ValidationService validationService;
 	
-	@PostMapping("/Addpayee")
+	@PostMapping("/validatePayee")
 	public String addPayee(PayeeAddRequestDto payeeAddRequestDto){
 
 		boolean payeeExist = false;
 		String addPayeeMsg = null;
-
 		
 		//we will validate weather the accounts exists or not 
 		payeeExist = validationService.validateCustomerAccountNumber(payeeAddRequestDto.getPayeeId());
@@ -43,6 +42,23 @@ public class CustomerController {
 	//End of method addPayee	
 	}
 	
+	@PostMapping("/addPayee")
+	public String validateAndAddCustomer(int otp,PayeeAddRequestDto payeeAddRequestDto){
+		
+			boolean otpvalidate = false;
+			String otpValidationResponse = "Otp entered is incorrect";
+			
+			otpvalidate = validationService.validateOtp(otp,payeeAddRequestDto.getCustomerId());
+
+			if(otpvalidate == true){
+				//add to customer repository;
+				customerService.addPayee(payeeAddRequestDto);
+				otpValidationResponse = "A new payee has been added to your account";
+			}
+
+
+			return otpValidationResponse;
+	}
 	
 	//end of CustomerController Class
 }

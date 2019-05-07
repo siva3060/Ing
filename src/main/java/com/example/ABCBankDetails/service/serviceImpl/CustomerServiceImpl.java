@@ -60,4 +60,18 @@ public class CustomerServiceImpl implements CustomerService{
 	  message.setText("Please use this OTP for add Payee : "+otp);
 	  emailSender.send(message);
 	 }
+
+
+	
+
+	@Override
+	public boolean addPayee(PayeeAddRequestDto payeeAddRequestDto) {
+		// TODO Auto-generated method stub
+		CustomerPayees currentPayee  = new CustomerPayees();
+		currentPayee.setCustomerId(payeeAddRequestDto.getCustomerId());
+		currentPayee.setPayeeId(payeeAddRequestDto.getPayeeId());
+		payeeRepository.save(currentPayee);
+		return true;
+		
+	}	
 }
